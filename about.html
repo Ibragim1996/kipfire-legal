@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - KIPFIRE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 56px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header .tagline {
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .intro {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+        }
+        
+        .intro strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 16px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e0e7ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+        }
+        
+        .feature-card .icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .highlight-box p {
+            color: rgba(255,255,255,0.95);
+            font-size: 16px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .warning-box h3 {
+            color: #856404;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .warning-box p {
+            color: #856404;
+            font-size: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .cta-box {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .cta-box h3 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .legal-link:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 KIPFIRE</h1>
+            <p class="tagline">Create. Share. Inspire.</p>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <strong>KIPFIRE</strong> is your ultimate AI-powered content idea generator for social media. 
+                Create engaging content for TikTok, Instagram, YouTube, and all your favorite platforms. 
+                Get instant creative inspiration 24/7 and take your social media presence to the next level.
+            </div>
+            
+            <h2>🎯 What is KIPFIRE?</h2>
+            <p>KIPFIRE is an innovative mobile application that generates creative content ideas for social media creators, influencers, and anyone looking to create engaging content for their friends, family, and followers.</p>
+            
+            <p>Using advanced AI technology, KIPFIRE provides you with unique, entertaining, and thought-provoking challenges across multiple categories:</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">😂</div>
+                    <h3>Funny</h3>
+                    <p>Hilarious challenges that will make your audience laugh and go viral</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">❓</div>
+                    <h3>Questions</h3>
+                    <p>Deep, thought-provoking questions to spark conversations and engagement</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💪</div>
+                    <h3>Motivation</h3>
+                    <p>Inspiring challenges to push yourself and motivate your followers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎉</div>
+                    <h3>Entertainment</h3>
+                    <p>Fun performances and entertaining content ideas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📚</div>
+                    <h3>Education</h3>
+                    <p>Mind-blowing facts and educational content that teaches while entertaining</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Challenges</h3>
+                    <p>Epic challenges that push you out of your comfort zone</p>
+                </div>
+            </div>
+            
+            <h2>✨ How It Works</h2>
+            <p>KIPFIRE makes content creation simple and fun:</p>
+            <ul>
+                <li><strong>Choose a Category:</strong> Select from 6 creative categories based on your mood</li>
+                <li><strong>Get AI-Generated Ideas:</strong> Receive unique, personalized content ideas powered by advanced AI</li>
+                <li><strong>Record Your Content:</strong> Use our built-in camera with text overlay to create professional-looking videos</li>
+                <li><strong>Share & Inspire:</strong> Post to your favorite social media platforms and engage your audience</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3>🚀 Premium Access - 24/7 Unlimited Ideas</h3>
+                <p>Upgrade to KIPFIRE Premium and unlock unlimited AI-generated content ideas, anytime, anywhere. Never run out of creative inspiration!</p>
+            </div>
+            
+            <h2>📱 Perfect For</h2>
+            <ul>
+                <li><strong>Content Creators:</strong> TikTok, Instagram, YouTube creators looking for fresh ideas</li>
+                <li><strong>Influencers:</strong> Build your personal brand with consistent, engaging content</li>
+                <li><strong>Casual Users:</strong> Create fun content for friends and family</li>
+                <li><strong>Social Media Enthusiasts:</strong> Stay relevant with trending content ideas</li>
+                <li><strong>Brands & Businesses:</strong> Generate authentic, relatable content for your audience</li>
+            </ul>
+            
+            <h2>🔥 Why KIPFIRE?</h2>
+            <p><strong>KIPFIRE is the fuel for your social media presence.</strong> We understand the challenges of consistently creating engaging content. That's why we've built a tool that:</p>
+            <ul>
+                <li>✅ Generates unlimited creative ideas on demand</li>
+                <li>✅ Adapts to current trends and social media best practices</li>
+                <li>✅ Supports multiple languages for global audiences</li>
+                <li>✅ Includes professional video editing tools</li>
+                <li>✅ Provides ideas across diverse content categories</li>
+                <li>✅ Works 24/7 whenever inspiration strikes</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h3>⚠️ Important: Content Responsibility</h3>
+                <p><strong>You are responsible for the content you create.</strong> KIPFIRE provides ideas and tools, but we do not assume responsibility for:</p>
+                <ul>
+                    <li>Content that may harm others or violate their rights</li>
+                    <li>Content that may harm you or put you at risk</li>
+                    <li>Content that violates platform guidelines or laws</li>
+                    <li>Content that is offensive, misleading, or inappropriate</li>
+                </ul>
+                <p><strong>Please create responsibly and consider the impact of your content on yourself and others.</strong></p>
+            </div>
+            
+            <h2>🌟 Free vs Premium</h2>
+            <p><strong>Free Tier:</strong></p>
+            <ul>
+                <li>5 AI-generated tasks per day</li>
+                <li>Access to all 6 categories</li>
+                <li>Video recording and editing tools</li>
+                <li>KIPFIRE watermark on videos</li>
+            </ul>
+            
+            <p><strong>Premium Subscription:</strong></p>
+            <ul>
+                <li>✨ Unlimited AI-generated tasks (24/7 access)</li>
+                <li>✨ All free features included</li>
+                <li>✨ Priority access to new features</li>
+                <li>✨ Support the continuous development of KIPFIRE</li>
+            </ul>
+            
+            <h2>🚀 Continuous Improvement</h2>
+            <p>KIPFIRE is constantly evolving. We're committed to:</p>
+            <ul>
+                <li><strong>Regular Updates:</strong> New features and improvements released frequently</li>
+                <li><strong>User Feedback:</strong> We listen to our community and implement requested features</li>
+                <li><strong>Trend Adaptation:</strong> Stay current with the latest social media trends</li>
+                <li><strong>Platform Expansion:</strong> More content types and categories coming soon</li>
+                <li><strong>Enhanced Tools:</strong> Advanced editing features in development</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3>🎉 Join the KIPFIRE Community</h3>
+                <p>Be part of a growing community of content creators who are changing the social media landscape. Follow trends, create viral content, and inspire millions with KIPFIRE!</p>
+            </div>
+            
+            <h2>🔒 Your Privacy & Safety</h2>
+            <p>We take your privacy seriously:</p>
+            <ul>
+                <li>Videos are stored only on your device - we don't access or store your content</li>
+                <li>Minimal data collection - we only collect what's necessary for the app to function</li>
+                <li>GDPR and CCPA compliant - your data rights are protected</li>
+                <li>Delete account option available anytime</li>
+            </ul>
+            
+            <div class="cta-box">
+                <h3>📜 Learn More</h3>
+                <p>For detailed information about how we handle your data, our terms of service, and your rights:</p>
+                <div class="legal-links">
+                    <a href="privacy-policy.html" class="legal-link">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="legal-link">Terms of Service</a>
+                </div>
+            </div>
+            
+            <h2>💬 Contact & Support</h2>
+            <p>Have questions or need help?</p>
+            <p><strong>Email:</strong> <a href="mailto:support@kipfire.com">support@kipfire.com</a></p>
+            <p><strong>Response Time:</strong> We aim to respond within 48 hours</p>
+            
+            <div class="intro" style="margin-top: 40px;">
+                <p style="text-align: center; font-size: 18px; margin: 0;">
+                    <strong>KIPFIRE: Your Creative Partner for Social Media Success 🔥</strong>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 KIPFIRE. All rights reserved.</p>
+            <p><a href="about.html">About</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+            <p style="margin-top: 15px; font-size: 12px; color: #999;">Version 1.0 | Last Updated: November 3, 2025</p>
+        </div>
+    </div>
+</body>
+</html>
+
